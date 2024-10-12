@@ -68,9 +68,9 @@ public class Main {
     public static void selectColor(int data) {
         if (data <= 10) {
             System.out.println("Красный");
-        } else if ((data <= 20) && (data > 10)) {
+        } else if (data <= 20) {
             System.out.println("Жёлтый");
-        } else if(data > 20){
+        } else {
             System.out.println("Зелёный");
         }
     }
