@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int[][] arrays = {{1, 2, 3}, {14, -7, 7, 7}, {1}};
-        int[] array = {10, 7, 5, 4, 3, 2, 1, 0};
+        int[] array = {2, 2, 2, 2, 2, 2, 2,2};
 
-        sumArrays(arrays);
+        //sumArrays(arrays);
         dotEqualityExamination(array);
-        arraysOrderlinessExamination(array);
-        reverseArray(array);
+        //arraysOrderlinessExamination(array);
+        //reverseArray(array);
 
     }
 
@@ -29,23 +29,26 @@ public class Main {
         System.out.println(Arrays.toString(resultArray));
     }
 
-    public static void dotEqualityExamination(int[] array) {
-        boolean result = false;
-        for (int i = 0; i < array.length; i++) {
-            int sumLeft = 0;
-            int sumRight = 0;
-            for (int j = 0; j < i + 1; j++) {
-                sumLeft += array[j];
-            }
-            for (int j = array.length - 1; j > i; j--) {
-                sumRight += array[j];
-            }
-            if (sumLeft == sumRight) {
-                result = true;
-                break;
-            }
+    public static boolean dotEqualityExamination(int[] array) {
+        int leftSum = array[0];
+        int rightSum = 0;
+        for (int i = array.length-1; i > 0; i--) {
+            rightSum += array[i];
         }
-        System.out.println(result ? "точка есть" : "точка отсутствует");
+        if (rightSum%2 != 0) {
+            System.out.println("точка отсутствует");
+            return false;
+        }
+        for (int i = 0; i < array.length-1; i++) {
+            if (leftSum == rightSum) {
+                System.out.println("точка есть");
+                return true;
+            }
+            leftSum+=array[i+1];
+            rightSum-=array[i+1];
+        }
+        System.out.println("точка отсутствует");
+        return false;
     }
 
     public static void arraysOrderlinessExamination(int[] array) {
