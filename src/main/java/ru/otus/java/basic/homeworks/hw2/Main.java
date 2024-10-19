@@ -9,6 +9,7 @@ public class Main {
         int[] array = {2, 2, 2, 2, 2, 2, 2,2};
 
         //test comment for commit 4
+        //test comment for commit 5
         sumArrays(arrays);
         dotEqualityExamination(array);
         arraysOrderlinessExamination(array);
