@@ -8,6 +8,7 @@ public class Main {
         int[][] arrays = {{1, 2, 3}, {14, -7, 7, 7}, {1}};
         int[] array = {2, 2, 2, 2, 2, 2, 2,2};
 
+        //test comment for commit 4
         sumArrays(arrays);
         dotEqualityExamination(array);
         arraysOrderlinessExamination(array);
